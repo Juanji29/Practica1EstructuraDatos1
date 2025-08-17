@@ -7,4 +7,7 @@ include_directories(.)
 
 add_executable(Practica1EstructuraDatos1
         Nodo.cpp
-        Nodo.h)
+        Nodo.h
+        Lista.h
+        Lista.cpp
+        Main.cpp)
