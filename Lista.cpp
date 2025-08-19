@@ -2,12 +2,15 @@
 // Created by juanc on 17/08/2025.
 //
 #include "Lista.h"
+#include <fstream>   // para ifstream y ofstream
+#include <iostream>  // <-- necesario para cout y cin
 using namespace std;
 
 Lista::Lista() {
     head = nullptr;
     tail = nullptr;
 }
+
 void Lista::crearLista() {
     string name;
     int room;
@@ -19,6 +22,37 @@ void Lista::crearLista() {
         insertarAlFinal(name, room);
     }
 }
+
+// funciones extras para le funcionamiento del codigo
+void Lista::cargarDesdeArchivo(string nombreArchivo) {
+    ifstream archivo(nombreArchivo);
+    if (!archivo.is_open()) {
+        cout << "No se pudo abrir el archivo " << nombreArchivo << " (se creara uno nuevo al guardar)." << endl;
+        return;
+    }
+    string name;
+    int room;
+    while (archivo >> name >> room) {
+        insertarAlFinal(name, room);
+    }
+    archivo.close();
+}
+
+void Lista::guardarEnArchivo(string nombreArchivo) {
+    ofstream archivo(nombreArchivo);
+    if (!archivo.is_open()) {
+        cout << "No se pudo abrir el archivo para escribir: " << nombreArchivo << endl;
+        return;
+    }
+    Nodo* current = head;
+    while (current != nullptr) {
+        archivo << current->getName() << "\n" << current->getRoom() << "\n";
+        current = current->getNext();
+    }
+    archivo.close();
+}
+// ====================================================
+
 void Lista::insertarAlInicio(string name, int room) {
     Nodo* newNode = new Nodo(name, room, head, nullptr);
     if (head != nullptr) {
@@ -91,4 +125,3 @@ void Lista::visualizarLista() {
         current = current->getNext();
     }
 }
-

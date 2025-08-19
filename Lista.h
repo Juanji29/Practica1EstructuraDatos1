@@ -1,21 +1,20 @@
-//
-// Created by juanc on 17/08/2025.
-//
-
 #ifndef LISTA_H
 #define LISTA_H
 
 #include "Nodo.h"
-#include <iostream>
-
+#include <string>
 using namespace std;
 
 class Lista {
 private:
     Nodo* head;
     Nodo* tail;
+
 public:
+    // Constructor
     Lista();
+
+    // Métodos de gestión de la lista
     void crearLista();
     void insertarAlInicio(string name, int room);
     void insertarAlFinal(string name, int room);
@@ -24,5 +23,10 @@ public:
     void eliminar(string name);
     Nodo* getUltimo();
     void visualizarLista();
+
+    // 🔹 NUEVAS FUNCIONES PARA ARCHIVOS
+    void cargarDesdeArchivo(string nombreArchivo);
+    void guardarEnArchivo(string nombreArchivo);
 };
-#endif //LISTA_H
+
+#endif
