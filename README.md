@@ -1,2 +1,7 @@
 # Practica1EstructuraDatos1
-Practica Nro 1 Estructura de Datos
+
+- Practica N° 1 Estructura de Datos 
+
+```diff
++ Hecho por Thomas Bedoya y Juan Esteban Jimenez
+```
