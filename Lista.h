@@ -24,7 +24,7 @@ public:
     Nodo* getUltimo();
     void visualizarLista();
 
-    // 🔹 NUEVAS FUNCIONES PARA ARCHIVOS
+    //  NUEVAS FUNCIONES PARA ARCHIVOS
     void cargarDesdeArchivo(string nombreArchivo);
     void guardarEnArchivo(string nombreArchivo);
 };
