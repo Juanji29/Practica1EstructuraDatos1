@@ -27,3 +27,5 @@ Proyecto correspondiente a la **Práctica N° 1 de Estructura de Datos**. El obj
 **Juan Esteban Jiménez**
 
 ### Link del video de sustentación
+
+https://youtu.be/_uxmP-zoE54
